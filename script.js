@@ -47,7 +47,7 @@ class Tabs {
         }
         var singleTabContent = this.mainContainer.querySelectorAll('.tabs-content-container .tab-content#'+e);
         singleTabContent[0].classList.add('active-tab');
-    };
+    }
 }
 
 // export 
