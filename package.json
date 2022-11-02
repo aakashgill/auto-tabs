@@ -1,21 +1,22 @@
 {
-  "name": "auto tabs",
+  "name": "auto-tabs",
   "version": "1.0.0",
-  "description": "A simple tabs switcher written in vanilla JS",
-  "main": "script.js",
+  "description": "A simple auto-tab switcher written in vanilla JS",
+  "main": "auto-tabs.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aakashgill/tabs.git"
+    "url": "git+https://github.com/aakashgill/auto-tabs.git"
   },
   "keywords": [
-    "auto tabs"
+    "auto-tabs",
     "tabs",
-    "vanilla js tabs",
+    "auto tabs",
+    "vanilla js tabs"
   ],
-  "author": "Aakash Gill",
+  "author": "aakash gill",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aakashgill/tabs/issues"
+    "url": "https://github.com/aakashgill/auto-tabs/issues"
   },
-  "homepage": "https://github.com/aakashgill/tabs#readme"
+  "homepage": "https://github.com/aakashgill/auto-tabs#readme"
 }
