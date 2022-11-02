@@ -37,6 +37,7 @@
         .tabs-content-container .tab-content.active-tab {
             display: block;
         }
+        
     </style>
 </head>
 <body>
@@ -51,20 +52,53 @@
             <button data-tab="tab3" class="tabs">
                 Tab 3
             </button>
+            <button data-tab="tab4" class="tabs">
+                Tab 4
+            </button>
+            <button data-tab="tab5" class="tabs">
+                Tab 5
+            </button>
         </div>
         
         <div class="tabs-content-container">
-            <div class="tab-content active-tab" id="tab1">
+            <div class="tab-content active-tab" data-tab-content="tab1">
                 Tab 1 data
+                <p>
+                    turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque. eu minim vulputate Pharetra habitasse gravida proident, sint justo anim ipsum eu in
+                </p>
+
             </div>
-            <div class="tab-content" id="tab2">
+            <div class="tab-content" data-tab-content="tab2">
                 Tab 2 data
+                <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. dolore egestas. amet, netus integer quisque adipiscing lorem viverra et arcu do sed
+                </p>
+
             </div>
-            <div class="tab-content" id="tab3">
+            <div class="tab-content" data-tab-content="tab3">
                 Tab 3 data
+                <p>
+                    nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat. fames molestie aliquip Eget malesuada Risus fames anim do aute consectetaur bibendum. Ut quisque. leo enim pariatur. eu
+                </p>
+            </div>
+            <div class="tab-content" data-tab-content="tab4">
+                Tab 4 data
+                <p>
+                    occaecat venenatis in posuere quis labore amet, cupidatat lectus Hac in ea consectetaur est Amet Morbi Excepteur commodo dolor enim dolor Lectus dolor vel velit pharetra gravida minim id reprehenderit
+                </p>
+            </div>
+            <div class="tab-content" data-tab-content="tab5">
+                Tab 5 data
+                <p>
+                    reprehenderit elit, donec. minim in hendrerit est ipsum Netus labore bibendum velit gravida venenatis eiusmod proident, Excepteur irure ut Ut Pharetra hendrerit pulvinar anim leo quisque. sem Hac Pharetra lectus
+                </p>
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./auto-tabs.js"></script>
+    <script>
+    new Tabs({
+        el: '#tabs'
+    });
+    </script>
 </body>
 </html>
