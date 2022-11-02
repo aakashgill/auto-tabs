@@ -101,3 +101,6 @@ new Tabs({
     autoplay: false
 });
 ```
+
+### Demo
+[Checkout the demo here](https://aakashgill.github.io/auto-tabs/)
