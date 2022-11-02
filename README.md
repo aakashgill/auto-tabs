@@ -49,6 +49,31 @@ A simple tabs switcher with an autoplay feature
 .tabs-content-container .tab-content.active-tab {
     display: block;
 }
+ /* Basic tabs styling */
+#tabs {
+    max-width: 500px;
+    margin: 50px auto;
+    border: 1px solid #d9dee1;
+}
+.tabs-container {
+    display: flex;
+}
+.tabs {
+    flex-grow: 1;
+    text-align: left;
+    padding: 10px;
+    background: #eee;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+.tabs-content-container {
+    padding: 10px;
+}
+.tabs-container .tabs.active-tab {
+    background-color: #fff;
+    font-weight: 600;
+}
 ```
 
 ### JS
