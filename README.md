@@ -49,6 +49,25 @@ A simple tabs switcher with an autoplay feature
 .tabs-content-container .tab-content.active-tab {
     display: block;
 }
+.tabs--loader {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.tabs-container .tabs.active-tab .tabs--loader {
+    animation-name: line-loader;
+    animation-timing-function: linear;
+}
+@keyframes line-loader {
+    to {
+        transform: scaleX(1);
+    }
+}
  /* Basic tabs styling */
 #tabs {
     max-width: 500px;
@@ -88,10 +107,12 @@ A simple tabs switcher with an autoplay feature
 
 
 ## Options
-| Name | Value | Default Value | Optional |
-| --- | --- | --- | --- |
-| autoplay | true/false | true | yes |
-| timer | 1000 | 2000 | yes |
+| Name | Value | Default Value | Optional | ValueType |
+| --- | --- | --- | --- | --- |
+| autoplay | true/false | true | yes | Boolean |
+| timer | 1000 | 2000 | yes | Number |
+| loading | true/false | false | yes | Boolean |
+| loadingColor | 'hex-value or color-name' | black | yes | String |
 
 
 ### For example

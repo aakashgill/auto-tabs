@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auto tabs made in vanilla JS">
     <title>tabs</title>
     <style>
+        
+        .tabs-content-container .tab-content {
+            display: none;
+        }
+        .tabs-content-container .tab-content.active-tab {
+            display: block;
+        }
+        .tabs--loader {
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        @keyframes line-loader {
+            to {
+                transform: scaleX(1);
+            }
+        }
+        .tabs-container .tabs.active-tab .tabs--loader {
+            animation-name: line-loader;
+            animation-timing-function: linear;
+        }
+
         /* Basic tabs styling */
-        #tabs {
-            max-width: 500px;
-            margin: 50px auto;
+        #tabs, #tabs2, #tabs3, #tabs4 {
+            max-width: 600px;
+            margin: 50px;
+            margin-top: 0;
             border: 1px solid #d9dee1;
         }
         .tabs-container {
@@ -27,78 +56,257 @@
         .tabs-content-container {
             padding: 10px;
         }
-        .tabs-content-container .tab-content {
-            display: none;
-        }
+        
         .tabs-container .tabs.active-tab {
             background-color: #fff;
             font-weight: 600;
         }
-        .tabs-content-container .tab-content.active-tab {
-            display: block;
+
+        body {
+            max-width: 1200px;
+            padding: 20px;
+            margin: auto;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
         }
         
     </style>
 </head>
 <body>
-    <div id="tabs">
-        <div class="tabs-container">
-            <button data-tab="tab1" class="tabs active-tab">
-                Tab 1
-            </button>
-            <button data-tab="tab2" class="tabs">
-                Tab 2
-            </button>
-            <button data-tab="tab3" class="tabs">
-                Tab 3
-            </button>
-            <button data-tab="tab4" class="tabs">
-                Tab 4
-            </button>
-            <button data-tab="tab5" class="tabs">
-                Tab 5
-            </button>
+    <h1>
+        Auto tabs made in Vanilla js
+    </h1>
+    <p>
+        Please feel free to log any issues or contribute <a target="_blank" href="https://github.com/aakashgill/auto-tabs/">here</a> :)
+    </p>
+    <div style="display: flex;">
+        <div style="width: 400px;">
+            <h2>Default tabs</h2>
+            <code>
+                new Tabs({
+                    el: '#tabs2'
+                });
+            </code>
         </div>
-        
-        <div class="tabs-content-container">
-            <div class="tab-content active-tab" data-tab-content="tab1">
-                Tab 1 data
-                <p>
-                    turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque. eu minim vulputate Pharetra habitasse gravida proident, sint justo anim ipsum eu in
-                </p>
 
+        <div id="tabs">
+            <div class="tabs-container">
+                <button data-tab="tab1" class="tabs active-tab">
+                    Tab 1
+                </button>
+                <button data-tab="tab2" class="tabs">
+                    Tab 2
+                </button>
+                <button data-tab="tab3" class="tabs">
+                    Tab 3
+                </button>
             </div>
-            <div class="tab-content" data-tab-content="tab2">
-                Tab 2 data
-                <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. dolore egestas. amet, netus integer quisque adipiscing lorem viverra et arcu do sed
-                </p>
+            
+            <div class="tabs-content-container">
+                <div class="tab-content active-tab" data-tab-content="tab1">
+                    Tab 1 data
+                    <p>
+                        turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque. eu minim vulputate Pharetra.
+                    </p>
 
-            </div>
-            <div class="tab-content" data-tab-content="tab3">
-                Tab 3 data
-                <p>
-                    nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat. fames molestie aliquip Eget malesuada Risus fames anim do aute consectetaur bibendum. Ut quisque. leo enim pariatur. eu
-                </p>
-            </div>
-            <div class="tab-content" data-tab-content="tab4">
-                Tab 4 data
-                <p>
-                    occaecat venenatis in posuere quis labore amet, cupidatat lectus Hac in ea consectetaur est Amet Morbi Excepteur commodo dolor enim dolor Lectus dolor vel velit pharetra gravida minim id reprehenderit
-                </p>
-            </div>
-            <div class="tab-content" data-tab-content="tab5">
-                Tab 5 data
-                <p>
-                    reprehenderit elit, donec. minim in hendrerit est ipsum Netus labore bibendum velit gravida venenatis eiusmod proident, Excepteur irure ut Ut Pharetra hendrerit pulvinar anim leo quisque. sem Hac Pharetra lectus
-                </p>
+                </div>
+                <div class="tab-content" data-tab-content="tab2">
+                    Tab 2 data
+                    <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. dolore egestas. 
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab3">
+                    Tab 3 data
+                    <p>
+                        nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat. fames molestie aliquip.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
+
+    <div style="display: flex;">
+        <div style="width: 400px;">
+            <h2>Tabs with timer option</h2>
+            <code>
+                new Tabs({
+                    el: '#tabs2',
+                    timer: 500
+                });
+            </code>
+        </div>
+
+        <div id="tabs2">
+            <div class="tabs-container">
+                <button data-tab="tab1" class="tabs active-tab">
+                    Tab 1
+                </button>
+                <button data-tab="tab2" class="tabs">
+                    Tab 2
+                </button>
+                <button data-tab="tab3" class="tabs">
+                    Tab 3
+                </button>
+            </div>
+            
+            <div class="tabs-content-container">
+                <div class="tab-content active-tab" data-tab-content="tab1">
+                    Tab 1 data
+                    <p>
+                        turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque. eu minim.
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab2">
+                    Tab 2 data
+                    <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. dolore egestas.
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab3">
+                    Tab 3 data
+                    <p>
+                        nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat. fames molestie.
+                    </p>
+                </div>
+            
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display: flex;">
+        <div style="width: 400px;">
+            <h2>Tabs with timer and loading</h2>
+            <code>
+                new Tabs({
+                    el: '#tabs3',
+                    timer: 4000,
+                    loading: true,
+                });
+            </code>
+        </div>
+    
+        <div id="tabs3">
+            <div class="tabs-container">
+                <button data-tab="tab1" class="tabs active-tab">
+                    Tab 1
+                </button>
+                <button data-tab="tab2" class="tabs">
+                    Tab 2
+                </button>
+                <button data-tab="tab3" class="tabs">
+                    Tab 3
+                </button>
+            </div>
+            
+            <div class="tabs-content-container">
+                <div class="tab-content active-tab" data-tab-content="tab1">
+                    Tab 1 data
+                    <p>
+                        turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque.
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab2">
+                    Tab 2 data
+                    <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. 
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab3">
+                    Tab 3 data
+                    <p>
+                        nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat.
+                    </p>
+                </div>
+            
+                
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex;">
+        <div style="width: 400px;">
+            <h2>Tabs with timer, loading and loadingColor</h2>
+            <code>
+                new Tabs({
+                    el: '#tabs4',
+                    timer: 2000,
+                    loading: true,
+                    loadingColor: '#f94c4c'
+                });
+            </code>
+        </div>
+    
+        <div id="tabs4">
+            <div class="tabs-container">
+                <button data-tab="tab1" class="tabs active-tab">
+                    Tab 1
+                </button>
+                <button data-tab="tab2" class="tabs">
+                    Tab 2
+                </button>
+                <button data-tab="tab3" class="tabs">
+                    Tab 3
+                </button>
+            </div>
+            
+            <div class="tabs-content-container">
+                <div class="tab-content active-tab" data-tab-content="tab1">
+                    Tab 1 data
+                    <p>
+                        turpis diam bibendum. occaecat aliquip sed Morbi lorem vulputate Nibh et lectus non. quisque. et non. quisque.
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab2">
+                    Tab 2 data
+                    <p>ut. anim hendrerit mollit ut anim sem ut urna hendrerit nunc senectus luctus laborum voluptate malesuada quisque. 
+                    </p>
+
+                </div>
+                <div class="tab-content" data-tab-content="tab3">
+                    Tab 3 data
+                    <p>
+                        nunc posuere donec occaecat incididunt reprehenderit pharetra. malesuada donec leo pulvinar consequat.
+                    </p>
+                </div>
+            
+                
+            </div>
+        </div>
+    </div>
+
+
     <script src="./auto-tabs.js"></script>
     <script>
+
     new Tabs({
-        el: '#tabs'
+        el: '#tabs',
     });
+    new Tabs({
+        el: '#tabs2',
+        timer: 500
+    });
+    new Tabs({
+        el: '#tabs3',
+        timer: 4000,
+        loading: true,
+    });
+    new Tabs({
+        el: '#tabs4',
+        timer: 2000,
+        loading: true,
+        loadingColor: '#f94c4c'
+    });
+    
     </script>
 </body>
 </html>
