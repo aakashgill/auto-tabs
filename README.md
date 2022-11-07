@@ -1,9 +1,9 @@
 # Auto tabs
----
 
 A simple tabs switcher with an autoplay feature
 1. Support for multiple instances of tabs
 2. Support of setting the autoplay timer
+3. Support of line-loading animation and changing its color
 
 
 ## Get started by adding the
