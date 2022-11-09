@@ -129,3 +129,6 @@ class Tabs {
         }, timer);
     }
 }
+if (typeof module === 'object' && module.exports) {
+    module.exports = Tabs;
+}
